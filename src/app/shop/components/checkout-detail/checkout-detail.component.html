@@ -1,0 +1,68 @@
+<div class="pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 p-5 bg-white rounded shadow-sm mb-5">
+                <h1 class="d-flex justify-content-center">Checkout Order Details</h1>
+
+                <!-- Shopping cart table -->
+                <div class="table-responsive p-5">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase">Product</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Price</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Quantity</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of checkoutItem.checkoutItems">
+                                <th scope="row" class="border-0">
+                                    <div class="p-2">
+                                        <img src="{{item.product.imgs[0].url}}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0"> <a href="javascript: void(0)" style="cursor: pointer"
+                                                    class="text-dark d-inline-block align-middle" [routerLink]="['/productDetail', item.id]">{{item.product.name}}</a></h5>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td class="border-0 align-middle">
+                                    <strong>{{item.product.price.currency}}{{item.product.price.value | number:
+                                        '1.2-2'}}
+                                        {{item.product.price.ISO}}
+                                    </strong>
+                                </td>
+                                <td class="border-0 align-middle">
+                                    <strong>
+                                        {{item.quantity}}
+                                    </strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 p-5 order-md-2 mb-5">
+
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                <div class="p-4">
+                    <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you
+                        have entered.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order
+                                Subtotal </strong><strong>{{totalAmount - tax | number: '1.2-2'}}</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>{{tax
+                                | number: '1.2-2'}}</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                            <h5 class="font-weight-bold">{{totalAmount | number: '1.2-2'}}</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

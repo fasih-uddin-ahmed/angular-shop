@@ -1,0 +1,141 @@
+<div class="container p-2">
+    <h1 class="d-flex justify-content-center my-3">Add Product</h1>
+    <div class="row my-2">
+        <div class="col-md-1">
+            <div class="border" *ngFor="let imgs of images; let i = index">
+                <img class="img-fluid p-2" style="cursor: pointer" src="{{imgs.url}}" alt="" (click)="selectedImage(imgs)"><br>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <!-- <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar"> -->
+            <img [src]="img" class="mx-auto img-fluid img-circle d-block">
+            <h6 class="mt-2">Add different photos</h6>
+            <input type='file' (change)="onSelectFile($event)">
+        </div>
+
+        <div class="col-md-7">
+            <form [formGroup]="productForm">
+                <div class="mb-3" style="width: 200px">
+                    <label for="pId">Product Id</label>
+                    <input formControlName="pId" type="number" class="form-control" [ngClass]="{ 'is-invalid': productForm.controls['pId'].invalid && (productForm.controls['pId'].dirty || productForm.controls['pId'].touched) }"
+                        required>
+                    <!-- <div>{{productForm.controls['pId'].status}}</div> -->
+                    <div *ngIf="productForm.controls['pId'].errors" class="invalid-feedback">
+                        Id is is required.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="name">Name{{executed}}</label>
+                    <input formControlName="name" type="text" class="form-control" [ngClass]="{ 'is-invalid': productForm.controls['name'].invalid && (productForm.controls['name'].dirty || productForm.controls['name'].touched) }"
+                        required>
+                    <div *ngIf="productForm.controls['name'].errors" class="invalid-feedback">
+                        Name of the product is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" placeholder="Enter description..." style="min-width: 100%"
+                        formControlName="description" type="description" class="form-control" [ngClass]="{ 'is-invalid': validations?.description.invalid && (validations?.description.dirty || validations?.description.touched) }"
+                        required></textarea>
+                    <div *ngIf="validations?.description.errors" class="invalid-feedback">
+                        Please enter description.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="video">Video Link</label>
+                    <input formControlName="video" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.video.invalid && (validations?.video.dirty || validations?.video.touched) }"
+                        id="video" placeholder="www...." name="video" required>
+                    <div *ngIf="validations?.video.errors" class="invalid-feedback">
+                        Please enter the video link.
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="colour">Colour</label>
+                        <input formControlName="colour" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.colour.invalid && (validations?.colour.dirty || validations?.colour.touched) }"
+                            id="colour" name="colour" required>
+                        <div *ngIf="validations?.colour.errors" class="invalid-feedback">
+                            Please enter a colour.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="rating">Rating</label>
+                        <input formControlName="rating" type="number" max="5" min="0" class="form-control" [ngClass]="{ 'is-invalid': validations?.rating.invalid && (validations?.rating.dirty || validations?.rating.touched) }"
+                            id="rating" name="rating" required>
+                        <div *ngIf="validations?.rating.errors" class="invalid-feedback">
+                            Please provide a valid rating.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="productType">Product Type</label>
+                        <input formControlName="productType" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.productType.invalid && (validations?.productType.dirty || validations?.productType.touched) }"
+                            id="productType" placeholder="" name="productType" required>
+                        <div *ngIf="validations?.productType.errors" class="invalid-feedback">
+                            Product type is required.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="value">Price</label>
+                        <input formControlName="value" type="number" class="form-control" [ngClass]="{ 'is-invalid': validations?.value.invalid && (validations?.value.dirty || validations?.value.touched) }"
+                            id="value" name="value" required>
+                        <div *ngIf="validations?.value.errors" class="invalid-feedback">
+                            Please enter a value.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="ISO">ISO</label>
+                        <input formControlName="ISO" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.ISO.invalid && (validations?.ISO.dirty || validations?.ISO.touched) }"
+                            id="ISO" name="ISO" required>
+                        <div *ngIf="validations?.ISO.errors" class="invalid-feedback">
+                            Please provide a valid ISO.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="currency">Currency</label>
+                        <input formControlName="currency" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.currency.invalid && (validations?.currency.dirty || validations?.currency.touched) }"
+                            id="currency" placeholder="" name="currency" required>
+                        <div *ngIf="validations?.currency.errors" class="invalid-feedback">
+                            Currency is required.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="stockStatus">Stock Status</label>
+                        <select formControlName="stockStatus" class="custom-select d-block w-100 form-control"
+                            [ngClass]="{ 'is-invalid': validations?.stockStatus.invalid && (validations?.stockStatus.dirty || validations?.stockStatus.touched) }"
+                            id="stockStatus" name="stockStatus" required>
+                            <option value="">choose...</option>
+                            <option value="true">Available</option>
+                            <option value="false">Unavailable</option>
+                        </select>
+                        <div *ngIf="validations?.stockStatus.errors" class="invalid-feedback">
+                            Please select stock Status.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="stockMessage">Stock Message</label>
+                        <input formControlName="stockMessage" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.stockMessage.invalid && (validations?.stockMessage.dirty || validations?.stockMessage.touched) }"
+                            id="stockMessage" placeholder="" name="stockMessage" required>
+                        <div *ngIf="validations?.stockMessage.errors" class="invalid-feedback">
+                            Please provide a Stock Message.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <button [disabled]="!productForm.valid && images" class="btn btn-primary btn-lg btn-block" type="submit"
+                    (click)="onSubmit()">Add
+                    product</button>
+            </form>
+        </div>
+    </div>
+    <app-product-list [label]="label" [products]="productList" (deleteItem)="deleteItem($event)"></app-product-list>
+</div>

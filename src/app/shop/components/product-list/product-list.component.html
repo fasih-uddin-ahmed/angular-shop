@@ -1,0 +1,38 @@
+<div class="container my-4">
+  <div class="row">
+    <h1 class="col">
+      {{label}}
+    </h1>
+    <input class="form-control col-3 m-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder="Search">
+  </div>
+
+
+  <div class="row card-group">
+    <div class="col-3" *ngFor="let product of products | filter:searchText | slice: 0:4">
+      <!-- <div class="card mb-4" style="cursor: pointer" [routerLink]="['/productDetail', product.id]"> -->
+      <div class="card mb-4">
+        <div style="cursor: pointer" (click)="onClick(product.id)">
+          <img src="{{product.imgs[0].url}}" class="card-img-top" height="350px" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text" *ngIf="product.stock.status && product.price.value"><small class="text-muted">Price:
+                {{product.price.currency}}{{product.price.value}} {{product.price.ISO}}</small></p>
+            <p class="card-text" *ngIf="!product.stock.status"><span class="badge badge-danger">{{product.stock.message}}</span><br>
+              <span class="badge badge-danger">{{date}}</span>
+            </p>
+          </div>
+          <!-- <p class="card-text" *ngIf="!product.price.value"><span class="badge badge-info">
+              {{product.price.message}}
+            </span><br>
+            <span class="badge badge-info">{{date}}</span></p> -->
+        </div>
+        <!-- delete button -->
+        <div class="card-text card-body text-center mb-1" *ngIf="loggedUser.role">
+          <button type="button" class="btn btn-danger" (click)="onDelete(product.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

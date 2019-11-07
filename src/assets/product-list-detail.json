@@ -1,0 +1,1072 @@
+[
+    {
+        "id": 1,
+        "name": "Phone XL",
+        "parent": true,
+        "imgs": [
+            {
+                "url": "/assets/phone1-0.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "1",
+                "name": "Black"
+            },
+            {
+                "id": "21",
+                "name": "Rose"
+            },
+            {
+                "id": "22",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera"
+    },
+    {
+        "id": 21,
+        "name": "Phone XL",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone2.jpg"
+            },
+            {
+                "url": "/assets/phone2-1.webp"
+            },
+            {
+                "url": "/assets/phone2-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "Rose",
+        "rating": 5,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "1",
+                "name": "Black"
+            },
+            {
+                "id": "21",
+                "name": "Rose"
+            },
+            {
+                "id": "22",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 342,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "In Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour."
+    },
+    {
+        "id": 22,
+        "name": "Phone XL",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone22-0.jpg"
+            },
+            {
+                "url": "/assets/phone22-1.jpg"
+            },
+            {
+                "url": "/assets/phone22-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "white",
+        "rating": 3,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "1",
+                "name": "Black"
+            },
+            {
+                "id": "21",
+                "name": "Rose"
+            },
+            {
+                "id": "22",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 542,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+    },
+    {
+        "id": 2,
+        "name": "Phone X",
+        "parent": true,
+        "imgs": [
+            {
+                "url": "/assets/phone2.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "2",
+                "name": "Black"
+            },
+            {
+                "id": "31",
+                "name": "Rose"
+            },
+            {
+                "id": "32",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera"
+    },
+    {
+        "id": 31,
+        "name": "Phone X",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone21-0.jpg"
+            },
+            {
+                "url": "/assets/phone21-1.jpg"
+            },
+            {
+                "url": "/assets/phone21-2.jpeg"
+            }
+        ],
+        "video": "",
+        "color": "Rose",
+        "rating": 5,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "31",
+                "name": "Rose"
+            },
+            {
+                "id": "32",
+                "name": "white"
+            },
+            {
+                "id": "2",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 342,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "In Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour."
+    },
+    {
+        "id": 32,
+        "name": "Phone X",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone22-0.jpg"
+            },
+            {
+                "url": "/assets/phone22-1.jpg"
+            },
+            {
+                "url": "/assets/phone22-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "white",
+        "rating": 3,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "32",
+                "name": "White"
+            },
+            {
+                "id": "31",
+                "name": "Rose"
+            },
+            {
+                "id": "2",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 542,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+    },
+    {
+        "id": 3,
+        "name": "Phone XL",
+        "parent": true,
+        "imgs": [
+            {
+                "url": "/assets/phone1-0.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "3",
+                "name": "Black"
+            },
+            {
+                "id": "41",
+                "name": "Rose"
+            },
+            {
+                "id": "42",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera"
+    },
+    {
+        "id": 41,
+        "name": "Phone XL",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone2.jpg"
+            },
+            {
+                "url": "/assets/phone2-1.webp"
+            },
+            {
+                "url": "/assets/phone2-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "Rose",
+        "rating": 5,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "3",
+                "name": "Black"
+            },
+            {
+                "id": "41",
+                "name": "Rose"
+            },
+            {
+                "id": "42",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 342,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "In Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour."
+    },
+    {
+        "id": 42,
+        "name": "Phone XL",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone22-0.jpg"
+            },
+            {
+                "url": "/assets/phone22-1.jpg"
+            },
+            {
+                "url": "/assets/phone22-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "white",
+        "rating": 3,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "3",
+                "name": "Black"
+            },
+            {
+                "id": "41",
+                "name": "Rose"
+            },
+            {
+                "id": "42",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 542,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+    },
+    {
+        "id": 4,
+        "name": "Phone X",
+        "parent": true,
+        "imgs": [
+            {
+                "url": "/assets/phone2.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "4",
+                "name": "Black"
+            },
+            {
+                "id": "51",
+                "name": "Rose"
+            },
+            {
+                "id": "52",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera"
+    },
+    {
+        "id": 51,
+        "name": "Phone X",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone21-0.jpg"
+            },
+            {
+                "url": "/assets/phone21-1.jpg"
+            },
+            {
+                "url": "/assets/phone21-2.jpeg"
+            }
+        ],
+        "video": "",
+        "color": "Rose",
+        "rating": 5,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "51",
+                "name": "Rose"
+            },
+            {
+                "id": "52",
+                "name": "white"
+            },
+            {
+                "id": "4",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 342,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "In Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour."
+    },
+    {
+        "id": 42,
+        "name": "Phone X",
+        "parent": false,
+        "imgs": [
+            {
+                "url": "/assets/phone22-0.jpg"
+            },
+            {
+                "url": "/assets/phone22-1.jpg"
+            },
+            {
+                "url": "/assets/phone22-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "white",
+        "rating": 3,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "52",
+                "name": "White"
+            },
+            {
+                "id": "51",
+                "name": "Rose"
+            },
+            {
+                "id": "4",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 542,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+    },
+    {
+        "id": 9,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone1-0.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "trending",
+        "variation": [
+            {
+                "id": "9",
+                "name": "Black"
+            },
+            {
+                "id": "61",
+                "name": "Rose"
+            },
+            {
+                "id": "62",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera"
+    },
+    {
+        "id": 61,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone21-0.jpg"
+            },
+            {
+                "url": "/assets/phone21-1.jpg"
+            },
+            {
+                "url": "/assets/phone21-2.jpeg"
+            }
+        ],
+        "video": "",
+        "color": "Rose",
+        "rating": 5,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "61",
+                "name": "Rose"
+            },
+            {
+                "id": "62",
+                "name": "white"
+            },
+            {
+                "id": "9",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 342,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "In Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour."
+    },
+    {
+        "id": 62,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone22-0.jpg"
+            },
+            {
+                "url": "/assets/phone22-1.jpg"
+            },
+            {
+                "url": "/assets/phone22-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "white",
+        "rating": 3,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "62",
+                "name": "White"
+            },
+            {
+                "id": "61",
+                "name": "Rose"
+            },
+            {
+                "id": "9",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 542,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+    },
+    {
+        "id": 10,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone2.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "trending",
+        "variation": [
+            {
+                "id": "10",
+                "name": "Black"
+            },
+            {
+                "id": "71",
+                "name": "Rose"
+            },
+            {
+                "id": "72",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera"
+    },
+    {
+        "id": 71,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone21-0.jpg"
+            },
+            {
+                "url": "/assets/phone21-1.jpg"
+            },
+            {
+                "url": "/assets/phone21-2.jpeg"
+            }
+        ],
+        "video": "",
+        "color": "Rose",
+        "rating": 5,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "71",
+                "name": "Rose"
+            },
+            {
+                "id": "72",
+                "name": "white"
+            },
+            {
+                "id": "10",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 342,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "In Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour."
+    },
+    {
+        "id": 72,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone22-0.jpg"
+            },
+            {
+                "url": "/assets/phone22-1.jpg"
+            },
+            {
+                "url": "/assets/phone22-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "white",
+        "rating": 3,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "72",
+                "name": "White"
+            },
+            {
+                "id": "71",
+                "name": "Rose"
+            },
+            {
+                "id": "10",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 542,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+    },
+    {
+        "id": 11,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone1-0.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "trending",
+        "variation": [
+            {
+                "id": "11",
+                "name": "Black"
+            },
+            {
+                "id": "81",
+                "name": "Rose"
+            },
+            {
+                "id": "82",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera",
+        "child": [
+            {
+                "id": 81,
+                "name": "Phone XL",
+                "imgs": [
+                    {
+                        "url": "/assets/phone21-0.jpg"
+                    },
+                    {
+                        "url": "/assets/phone21-1.jpg"
+                    },
+                    {
+                        "url": "/assets/phone21-2.jpeg"
+                    }
+                ],
+                "video": "",
+                "color": "Rose",
+                "rating": 5,
+                "type": "popular",
+                "variation": [
+                    {
+                        "id": "81",
+                        "name": "Rose"
+                    },
+                    {
+                        "id": "82",
+                        "name": "white"
+                    },
+                    {
+                        "id": "11",
+                        "name": "Black"
+                    }
+                ],
+                "price": {
+                    "value": 342,
+                    "ISO": "USD",
+                    "currency": "$",
+                    "message": "Coming Soon..."
+                },
+                "stock": {
+                    "status": true,
+                    "message": "In Stock"
+                },
+                "description": "A large phone with one of the best screens and with awesome colour."
+            },
+            {
+                "id": 82,
+                "name": "Phone XL",
+                "imgs": [
+                    {
+                        "url": "/assets/phone22-0.jpg"
+                    },
+                    {
+                        "url": "/assets/phone22-1.jpg"
+                    },
+                    {
+                        "url": "/assets/phone22-2.jpg"
+                    }
+                ],
+                "video": "",
+                "color": "white",
+                "rating": 3,
+                "type": "popular",
+                "variation": [
+                    {
+                        "id": "82",
+                        "name": "White"
+                    },
+                    {
+                        "id": "81",
+                        "name": "Rose"
+                    },
+                    {
+                        "id": "11",
+                        "name": "Black"
+                    }
+                ],
+                "price": {
+                    "value": 542,
+                    "ISO": "USD",
+                    "currency": "$",
+                    "message": "Coming Soon..."
+                },
+                "stock": {
+                    "status": true,
+                    "message": "Out Of Stock"
+                },
+                "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone2.jpg"
+            },
+            {
+                "url": "/assets/phone1-1.jpg"
+            },
+            {
+                "url": "/assets/phone1-2.jpg"
+            }
+        ],
+        "video": "https://www.youtube.com/embed/nDbkCYLuXLI",
+        "color": "Black",
+        "rating": 4,
+        "type": "trending",
+        "variation": [
+            {
+                "id": "12",
+                "name": "Black"
+            },
+            {
+                "id": "91",
+                "name": "Rose"
+            },
+            {
+                "id": "92",
+                "name": "White"
+            }
+        ],
+        "price": {
+            "value": 400,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": false,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and camera"
+    },
+    {
+        "id": 91,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone21-0.jpg"
+            },
+            {
+                "url": "/assets/phone21-1.jpg"
+            },
+            {
+                "url": "/assets/phone21-2.jpeg"
+            }
+        ],
+        "video": "",
+        "color": "Rose",
+        "rating": 5,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "91",
+                "name": "Rose"
+            },
+            {
+                "id": "92",
+                "name": "white"
+            },
+            {
+                "id": "12",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 342,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "In Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour."
+    },
+    {
+        "id": 92,
+        "name": "Phone XL",
+        "imgs": [
+            {
+                "url": "/assets/phone22-0.jpg"
+            },
+            {
+                "url": "/assets/phone22-1.jpg"
+            },
+            {
+                "url": "/assets/phone22-2.jpg"
+            }
+        ],
+        "video": "",
+        "color": "white",
+        "rating": 3,
+        "type": "popular",
+        "variation": [
+            {
+                "id": "92",
+                "name": "White"
+            },
+            {
+                "id": "91",
+                "name": "Rose"
+            },
+            {
+                "id": "12",
+                "name": "Black"
+            }
+        ],
+        "price": {
+            "value": 542,
+            "ISO": "USD",
+            "currency": "$",
+            "message": "Coming Soon..."
+        },
+        "stock": {
+            "status": true,
+            "message": "Out Of Stock"
+        },
+        "description": "A large phone with one of the best screens and with awesome colour and with a lifelong bettary that gets you through the day."
+    }
+]

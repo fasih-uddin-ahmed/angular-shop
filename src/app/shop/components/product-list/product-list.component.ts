@@ -1,0 +1,41 @@
+import { Component, OnInit } from "@angular/core";
+import { Input, Output, EventEmitter } from "@angular/core";
+import { environment } from "../../../../environments/environment";
+import { UserService } from "../../Service/user.service";
+
+@Component({
+  selector: "app-product-list",
+  templateUrl: "./product-list.component.html",
+  styleUrls: ["./product-list.component.css"]
+})
+export class ProductListComponent implements OnInit {
+
+  @Input() label;
+  @Input() products;
+  @Output() deleteItem: EventEmitter<any> = new EventEmitter();
+  searchText;
+  loggedUser;
+
+  date = "Available on August 30, 2019";
+
+  constructor(
+    private userService: UserService
+  ) { }
+
+  onClick(id) {
+    const url = environment.productDetailUrl + id;
+    // const url = "http://localhost:4200/productDetail/" + id;
+    window.open(url, "_blank");
+  }
+
+  onDelete(id) {
+    // let productList = this.products.filter(p => p.id !== id)
+    this.deleteItem.emit(id);
+    // console.log(productList);
+    // this.deleteItem.emit(productList);
+  }
+
+  ngOnInit() {
+    this.userService.getUser().subscribe(res => this.loggedUser = res);
+  }
+}
