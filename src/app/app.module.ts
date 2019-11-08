@@ -6,10 +6,15 @@ import { ShopModule } from './shop/shop.module';
 
 import { AppComponent } from "./app.component";
 import { CartService } from "./shop/Service/cart-detail.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ShopModule],
+  imports: [
+    BrowserModule, AppRoutingModule,
+    ShopModule,
+    BrowserAnimationsModule,
+  ],
   providers: [CartService],
   bootstrap: [AppComponent]
 })

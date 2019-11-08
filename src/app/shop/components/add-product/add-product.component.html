@@ -10,7 +10,9 @@
             <!-- <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar"> -->
             <img [src]="img" class="mx-auto img-fluid img-circle d-block">
             <h6 class="mt-2">Add different photos</h6>
-            <input type='file' (change)="onSelectFile($event)">
+            <input class="pb-1" type='file' (change)="onSelectFile($event)">
+            <h6 *ngIf="!img">Without adding Image, Product cannot be added</h6><br>
+            <button *ngIf="img" class="btn btn-primary" (click)="clearImages()">Clear Images</button>
         </div>
 
         <div class="col-md-7">
@@ -131,8 +133,11 @@
                     </div>
                 </div>
                 <hr class="mb-4">
-                <button [disabled]="!productForm.valid && images" class="btn btn-primary btn-lg btn-block" type="submit"
-                    (click)="onSubmit()">Add
+                <button *ngIf="!editItemId" [style.pointer-events]="!img ?'none':'auto'" [disabled]="!productForm.valid"
+                    class="btn btn-primary btn-lg btn-block" type="submit" (click)="onSubmit()">Add
+                    product</button>
+                <button *ngIf="editItemId" [style.pointer-events]="!img ?'none':'auto'" [disabled]="!productForm.valid"
+                    class="btn btn-primary btn-lg btn-block" type="submit" (click)="onSubmit()">Update
                     product</button>
             </form>
         </div>

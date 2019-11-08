@@ -35,7 +35,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     ToastrModule.forRoot(
       {
         timeOut: 2000,
@@ -44,7 +44,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     )
   ],
   exports: [
-    ShopComponent, ProductListComponent, ProductDetailComponent
+    ShopComponent, ProductListComponent, ProductDetailComponent, AddProductComponent
   ],
   providers: [
     ProductService, CartService, UserService, CheckoutService

@@ -1,0 +1,58 @@
+<div class="pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-5 bg-white rounded shadow-sm mb-5">
+                <h1 class="d-flex justify-content-center">List of Products</h1>
+
+                <!-- List table -->
+                <div class="table-responsive p-5">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase">Product</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Price</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Edit</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Delete</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of productsList">
+                                <th scope="row" class="border-0">
+                                    <div class="p-2">
+                                        <img src="{{item.imgs[0].url}}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0"> <a href="javascript: void(0)" style="cursor: pointer"
+                                                    class="text-dark d-inline-block align-middle" [routerLink]="['/productDetail', item.id]">{{item.name}}</a></h5>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td class="border-0 align-middle">
+                                    <strong>{{item.price.currency}}{{item.price.value | number:
+                                        '1.2-2'}}
+                                        {{item.price.ISO}}
+                                    </strong>
+                                </td>
+                                <td class="border-0 align-middle">
+                                    <button class="btn btn-primary" (click)="onEdit(item.id)"><i class="fa fa-edit">
+                                            Edit</i></button>
+                                </td>
+                                <td class="border-0 align-middle">
+                                    <button class="btn btn-danger" (click)="onDelete(item.id)"><i class="fa fa-trash">
+                                            Delete</i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
