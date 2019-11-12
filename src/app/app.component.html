@@ -22,7 +22,7 @@
       </li>
     </ul>
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <li *ngIf="loggedIn && user.role === 'admin'" class="nav-item">
         <a class="nav-link pr-5" routerLink="product-management">Product Management</a>
       </li>
       <li class="nav-item">
@@ -32,15 +32,15 @@
         </a>
       </li>
     </ul>
-    <ul *ngIf="!user" class="navbar-nav">
+    <ul *ngIf="!loggedIn" class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="#"><i class="fa fa-sign-in" aria-hidden="true"> SignUP</i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"> LogIn</i></a>
+        <a class="nav-link" routerLink="login"><i class="fa fa-user" aria-hidden="true"> LogIn</i></a>
       </li>
     </ul>
-    <ul *ngIf="user" class="navbar-nav">
+    <ul *ngIf="loggedIn" class="navbar-nav">
       <li class="nav-item dropdown">
         <!-- <a class="nav-link" href="javascript:void(0);"><i class="fa fa-user" aria-hidden="true"> User</i></a> -->
         <a id="user" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
@@ -50,15 +50,17 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="profile">profile</a>
           <a class="dropdown-item" routerLink="checkoutHistory">History</a>
-          <a *ngIf="user.role" class="dropdown-item" routerLink="processOrder">Process Order</a>
-          <a *ngIf="user.role" class="dropdown-item" routerLink="addProduct">Add Product</a>
+          <a *ngIf="loggedIn && user.role === 'admin'" class="dropdown-item" routerLink="processOrder">Process Order</a>
+          <a *ngIf="loggedIn && user.role === 'admin'" class="dropdown-item" routerLink="addProduct">Add Product</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="onLogOut()">Log out</a>
+          <a class="dropdown-item" href="" (click)="onLogOut()">Log out</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+
+
 
 <div class="container">
   <router-outlet>

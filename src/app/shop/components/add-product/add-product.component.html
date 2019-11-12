@@ -73,8 +73,16 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="productType">Product Type</label>
-                        <input formControlName="productType" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.productType.invalid && (validations?.productType.dirty || validations?.productType.touched) }"
-                            id="productType" placeholder="" name="productType" required>
+                        <!-- <input formControlName="productType" type="text" class="form-control" [ngClass]="{ 'is-invalid': validations?.productType.invalid && (validations?.productType.dirty || validations?.productType.touched) }"
+                            id="productType" placeholder="" name="productType" required> -->
+                        <select formControlName="productType" class="custom-select d-block w-100 form-control"
+                            [ngClass]="{ 'is-invalid': validations?.productType.invalid && (validations?.productType.dirty || validations?.productType.touched) }"
+                            id="productType" name="productType" required>
+                            <option value="">choose...</option>
+                            <option value="popular">Popular</option>
+                            <option value="trending">Trending</option>
+                            <option value="feature">Feature</option>
+                        </select>
                         <div *ngIf="validations?.productType.errors" class="invalid-feedback">
                             Product type is required.
                         </div>
@@ -142,5 +150,5 @@
             </form>
         </div>
     </div>
-    <app-product-list [label]="label" [products]="productList" (deleteItem)="deleteItem($event)"></app-product-list>
+    <!-- <app-product-list [label]="label" [products]="productList" (deleteItem)="deleteItem($event)"></app-product-list> -->
 </div>

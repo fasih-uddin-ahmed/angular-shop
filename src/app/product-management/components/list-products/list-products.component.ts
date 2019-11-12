@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductService } from "../../../shop/Service/product.service";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-products',
@@ -12,7 +13,8 @@ export class ListProductsComponent implements OnInit {
   productsList: any;
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private toastr: ToastrService
   ) { }
 
   onEdit(id) {
@@ -24,6 +26,7 @@ export class ListProductsComponent implements OnInit {
     let products = this.productsList.filter(item => item.id !== id);
     this.productService.resetProducts(products);
     this.productsList = products;
+    this.toastr.error("Product Deleted Successfully");
   }
 
   ngOnInit() {

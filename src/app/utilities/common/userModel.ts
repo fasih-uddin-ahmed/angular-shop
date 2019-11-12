@@ -6,4 +6,9 @@ export class userModel {
     password: string;
     role: string;
     imgUrl: string;
+    cart = {
+        items: [],
+        totalAmount: 0,
+        totalQuantity: 0
+    };
 }

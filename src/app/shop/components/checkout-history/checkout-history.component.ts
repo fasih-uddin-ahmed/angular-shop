@@ -9,7 +9,8 @@ import { CheckoutService } from "../../Service/checkout.service";
 export class CheckoutHistoryComponent implements OnInit {
 
   checkoutHistory;
-  checkoutItems;
+  loggedUser;
+  // checkoutItems;
 
   constructor(
     private checkoutService: CheckoutService
@@ -21,6 +22,8 @@ export class CheckoutHistoryComponent implements OnInit {
 
   ngOnInit() {
     this.checkoutHistory = this.checkoutService.getCheckoutHistory();
+    this.loggedUser = JSON.parse(localStorage.getItem("currentUser"));
+    this.checkoutHistory = this.checkoutHistory.filter(items => items.user === this.loggedUser.email);
     console.log(this.checkoutHistory);
   }
 

@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit {
 
   @Input() label;
   @Input() products;
-  @Output() deleteItem: EventEmitter<any> = new EventEmitter();
+  // @Output() deleteItem: EventEmitter<any> = new EventEmitter();
   searchText;
   loggedUser;
 
@@ -24,18 +24,17 @@ export class ProductListComponent implements OnInit {
 
   onClick(id) {
     const url = environment.productDetailUrl + id;
-    // const url = "http://localhost:4200/productDetail/" + id;
     window.open(url, "_blank");
   }
 
-  onDelete(id) {
-    // let productList = this.products.filter(p => p.id !== id)
-    this.deleteItem.emit(id);
-    // console.log(productList);
-    // this.deleteItem.emit(productList);
-  }
+  // onDelete(id) {
+  //   this.deleteItem.emit(id);
+  // }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(res => this.loggedUser = res);
+    // this.userService.getUser().subscribe(res => this.loggedUser = res);
+    // this.loggedUser = this.userService.getUser();
+
+    this.loggedUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 }

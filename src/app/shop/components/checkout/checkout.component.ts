@@ -26,6 +26,8 @@ export class CheckoutComponent implements OnInit {
   tax = 10;
   checkoutAmount;
   logInPopup = false;
+  loggedInStatus: any;
+  loggedUser: any;
   userBill = new userBillingModel();
   userShip = new userShippingModel();
   newUser = new userModel();
@@ -186,13 +188,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   validateUser() {
-    // let user = JSON.parse(localStorage.getItem("user"));
-    let user;
-    this.userService.getUser().subscribe(res => user = res);
-    if (user) {
+    if (this.loggedInStatus) {
       this.makeCheckoutItem();
     } else {
-      // console.log("executed");
       this.logInPopup = true;
     }
   }
@@ -209,6 +207,7 @@ export class CheckoutComponent implements OnInit {
     item.date = new Date();
     item.status = "Pending";
     item.rejectReason = "";
+    item.user = this.loggedUser.email;
     console.log(item);
     this.toastr.success("Checkedout Successfully");
     this.checkoutService.addToCheckout(item);
@@ -235,12 +234,23 @@ export class CheckoutComponent implements OnInit {
     //   console.log("user already in db");
     // } else {
     //   console.log("new user added in db");
+
     if (this.newUser.email === "admin") {
       this.newUser.role = "admin";
     }
-    this.userService.addUser(this.newUser);
-    // }
-    this.makeCheckoutItem();
+    this.loggedUser = this.userService.getUser(this.newUser.email);
+    if (!this.loggedUser) {
+      this.loggedUser = this.newUser;
+      this.userService.addUser(this.newUser);
+      localStorage.setItem('currentUser', JSON.stringify(this.newUser));
+      console.log("newUser");
+      this.makeCheckoutItem();
+    } else {
+      localStorage.setItem('currentUser', JSON.stringify(this.loggedUser));
+      localStorage.setItem("loggedIn", JSON.stringify(true));
+      console.log("old user found");
+      this.makeCheckoutItem();
+    }
   }
 
   onModelDismiss() {
@@ -266,7 +276,10 @@ export class CheckoutComponent implements OnInit {
     this.cartItems = this.cartService.getCartItems();
     this.cartService.getTotalAmount().subscribe(response => this.cartTotalAmount = response);
     this.checkoutAmount = this.cartTotalAmount + this.tax;
-    console.log(this.cartItems);
+    // console.log(this.cartItems);
+
+    this.loggedInStatus = JSON.parse(localStorage.getItem('loggedIn'));
+    this.loggedUser = JSON.parse(localStorage.getItem('currentUser'));
 
     // this.userBill.sameShippingAddress = true;
     let userInfo = JSON.parse(localStorage.getItem("userBill"));

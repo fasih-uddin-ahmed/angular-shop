@@ -10,9 +10,11 @@ import { CheckoutDetailComponent } from "./components/checkout-detail/checkout-d
 import { OrderProcessComponent } from "./components/order-process/order-process.component";
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: "", component: ShopComponent, pathMatch: 'full' },
+  { path: "login", component: LoginComponent },
   { path: "productDetail/:id", component: ProductDetailComponent },
   { path: "checkout", component: CheckoutComponent },
   { path: "checkoutHistory", component: CheckoutHistoryComponent },

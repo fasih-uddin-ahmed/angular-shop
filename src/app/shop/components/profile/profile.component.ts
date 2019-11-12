@@ -50,7 +50,8 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(res => this.user = res);
+    // this.userService.getUser().subscribe(res => this.user = res);
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
     if (this.user) {
       this.userForm = this.fb.group({
         firstName: [this.user.firstName, Validators.required],

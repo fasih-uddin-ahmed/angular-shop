@@ -10,16 +10,23 @@ export class ShopComponent implements OnInit {
 
   trendingLabel: string = "Trending";
   popularLabel: string = "Popular";
+  featureLabel: string = "Featured";
   products: any = [];
+  popularProducts: any = [];
+  trendingProducts: any = [];
+  featureProducts: any = [];
+
   constructor(
     private productService: ProductService
   ) { }
 
   ngOnInit() {
-    this.productService.getJsonProducts().subscribe(response => {
-      this.products = response[0];
-      // console.info(response);
+    this.productService.getProducts().subscribe(response => {
+      this.products = response;
     })
+    this.popularProducts = this.products.filter(item => item.productType === 'popular');
+    this.trendingProducts = this.products.filter(item => item.productType === 'trending');
+    this.featureProducts = this.products.filter(item => item.productType === 'feature');
   }
 
 }

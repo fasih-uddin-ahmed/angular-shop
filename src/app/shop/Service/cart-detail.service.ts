@@ -66,13 +66,14 @@ export class CartService {
     let amount = JSON.parse(localStorage.getItem('totalAmount'));
     this.totalAmountSource.next(amount);
 
-    let items = this.getCartItems();
-    if (items.length == 0) {
-      this.totalAmountSource.next(0);
-      return this.totalAmount;
-    } else {
-      return this.totalAmount;
-    }
+    // let items = this.getCartItems();
+    // if (items.length == 0) {
+    //   localStorage.setItem('totalAmount', JSON.stringify(0));
+    //   this.totalAmountSource.next(0);
+    //   return this.totalAmount;
+    // } else {
+    return this.totalAmount;
+    // }
   }
 
   getTotalQuantity() {
@@ -85,5 +86,34 @@ export class CartService {
     let iso = JSON.parse(localStorage.getItem('ISO'));
     this.ISOSource.next(iso);
     return this.ISO;
+  }
+
+  setCartItems(items) {
+    let result = JSON.parse(localStorage.getItem('cartItems'));
+    if (result == null) {
+      localStorage.setItem('cartItems', JSON.stringify(this.cartItemsSource.value));
+    }
+
+    let currentValue = []
+    const updatedValue = [...currentValue, ...items];
+
+    localStorage.setItem('cartItems', JSON.stringify(updatedValue));
+    this.cartItemsSource.next(updatedValue);
+  }
+
+  setTotalAmount(amount) {
+    localStorage.setItem('totalAmount', JSON.stringify(amount));
+    this.totalAmountSource.next(amount);
+  }
+
+  setTotalQuantity(quantity) {
+    let currentValue = JSON.parse(localStorage.getItem('cartItems'));
+    localStorage.setItem('totalQuantity', JSON.stringify(currentValue.length));
+    this.totalQuantitySource.next(currentValue.length);
+  }
+
+  setISO(iso) {
+    localStorage.setItem('ISO', JSON.stringify(iso));
+    this.ISOSource.next(iso);
   }
 }

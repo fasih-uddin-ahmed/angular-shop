@@ -100,11 +100,11 @@ export class AddProductComponent implements OnInit {
     this.img = '';
   }
 
-  deleteItem(id) {
-    let products = this.productList.filter(p => p.id !== id)
-    this.productService.resetProducts(products);
-    this.productList = products;
-  }
+  // deleteItem(id) {
+  //   let products = this.productList.filter(p => p.id !== id)
+  //   this.productService.resetProducts(products);
+  //   this.productList = products;
+  // }
 
   ngOnInit() {
     this.productService.getProducts().subscribe(res => this.productList = res);

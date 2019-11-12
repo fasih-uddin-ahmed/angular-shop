@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
+import { FormsModule } from "@angular/forms";
 
 import { ShopModule } from './shop/shop.module';
 
@@ -14,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule, AppRoutingModule,
     ShopModule,
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
