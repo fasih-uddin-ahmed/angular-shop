@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { userModel } from './../../utilities/common/userModel';
+import { HttpClient } from '@angular/common/http';
+import { environment } from "../../../environments/environment";
+// import { userModel } from './../../utilities/common/userModel';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +12,16 @@ export class UserService {
   userSource: BehaviorSubject<Array<any>> = new BehaviorSubject([]);
   user = this.userSource.asObservable();
 
-  constructor() { }
+  uri = `${environment.serverUrl}/api/user`;
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   addUser(user) {
-    // localStorage.setItem("user", JSON.stringify(user));
+    // console.log(user);
+    // this.http.post(`${this.uri}/`, user)
+    //   .subscribe(res => console.log('user added to db'));
 
     let result = JSON.parse(localStorage.getItem('user'));
     if (result === null) {
@@ -26,6 +34,9 @@ export class UserService {
   }
 
   getUser(email) {
+    // console.log(email);
+    // return this.http.get(`${this.uri}/user`, email);
+
     let users = JSON.parse(localStorage.getItem('user'));
     if (users === null) {
       localStorage.setItem('user', JSON.stringify([]));

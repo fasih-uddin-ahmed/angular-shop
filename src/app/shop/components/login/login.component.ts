@@ -20,19 +20,28 @@ export class LoginComponent implements OnInit {
   ) { }
 
   onLogin() {
-    console.log(this.userToLog);
-    this.userToLog = this.userService.getUser(this.userToLog.email);
-    if (!this.userToLog) {
-      this.userToLog = this.userToLog;
+    // console.log(this.userToLog);
+    // this.userService.addUser(this.userToLog);
+
+    let user;
+    console.log(this.userToLog.email);
+    // this.userService.getUser(this.userToLog.email).subscribe(res => user = res);
+    user = this.userService.getUser(this.userToLog.email);
+    // console.log(user);
+    if (!user) {
+      // if (!this.userToLog) {
+      // this.userToLog = this.userToLog;
+      // this.userToLog = user;
       this.userService.addUser(this.userToLog);
       localStorage.setItem('currentUser', JSON.stringify(this.userToLog));
+      localStorage.setItem("loggedIn", JSON.stringify(true));
       console.log("userToLog");
     } else {
-      localStorage.setItem('currentUser', JSON.stringify(this.userToLog));
+      // localStorage.setItem('currentUser', JSON.stringify(this.userToLog));
+      localStorage.setItem('currentUser', JSON.stringify(user));
       console.log("old user found");
+      localStorage.setItem("loggedIn", JSON.stringify(true));
     }
-    localStorage.setItem("loggedIn", JSON.stringify(true));
-    console.log(this.userToLog);
     if (this.userToLog.cart) {
       this.cartService.setCartItems(this.userToLog.cart.items);
       this.cartService.setTotalAmount(this.userToLog.cart.totalAmount);

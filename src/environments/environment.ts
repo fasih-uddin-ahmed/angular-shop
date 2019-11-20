@@ -4,6 +4,7 @@
 
 export const environment = {
   productDetailUrl: "http://localhost:4200/productDetail/",
+  serverUrl: "http://localhost:4000",
   production: false
 };
 

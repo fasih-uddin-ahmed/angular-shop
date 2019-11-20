@@ -23,10 +23,11 @@ export class ShopComponent implements OnInit {
   ngOnInit() {
     this.productService.getProducts().subscribe(response => {
       this.products = response;
+      console.log(this.products);
+      this.popularProducts = this.products.filter(item => item.productType === 'popular');
+      this.trendingProducts = this.products.filter(item => item.productType === 'trending');
+      this.featureProducts = this.products.filter(item => item.productType === 'feature');
     })
-    this.popularProducts = this.products.filter(item => item.productType === 'popular');
-    this.trendingProducts = this.products.filter(item => item.productType === 'trending');
-    this.featureProducts = this.products.filter(item => item.productType === 'feature');
   }
 
 }

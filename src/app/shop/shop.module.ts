@@ -26,9 +26,10 @@ import { OrderProcessComponent } from './components/order-process/order-process.
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
-  declarations: [ShopComponent, ProductListComponent, ProductDetailComponent, SafePipe, CheckoutComponent, CheckoutHistoryComponent, ThankYouPageComponent, CheckoutDetailComponent, OrderProcessComponent, ProfileComponent, AddProductComponent, LoginComponent],
+  declarations: [ShopComponent, ProductListComponent, ProductDetailComponent, SafePipe, CheckoutComponent, CheckoutHistoryComponent, ThankYouPageComponent, CheckoutDetailComponent, OrderProcessComponent, ProfileComponent, AddProductComponent, LoginComponent, SignupComponent],
   imports: [
     CommonModule,
     ShopRoutingModule,
