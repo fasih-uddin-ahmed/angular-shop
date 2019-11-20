@@ -19,8 +19,9 @@ export class SignupComponent implements OnInit {
 
   onSignup() {
     let user = this.userService.getUser(this.userToSignup.email);
-    if (!user) {
-      this.toastr.error("this user with email alredy exists.")
+    console.log(user);
+    if (user) {
+      this.toastr.error("User with this email alredy exists.");
     } else {
       this.userService.addUser(this.userToSignup);
       localStorage.setItem('currentUser', JSON.stringify(this.userToSignup));
