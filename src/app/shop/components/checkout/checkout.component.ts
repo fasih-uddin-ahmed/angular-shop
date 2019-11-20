@@ -240,12 +240,14 @@ export class CheckoutComponent implements OnInit {
     }
     this.loggedUser = this.userService.getUser(this.newUser.email);
     if (!this.loggedUser) {
-      this.loggedUser = this.newUser;
-      this.userService.addUser(this.newUser);
-      localStorage.setItem('currentUser', JSON.stringify(this.newUser));
-      localStorage.setItem("loggedIn", JSON.stringify(true));
-      console.log("newUser");
-      this.makeCheckoutItem();
+      this.toastr.error("No User Found.");
+      this.toastr.info("Sign up to proceed");
+      // this.loggedUser = this.newUser;
+      // this.userService.addUser(this.newUser);
+      // localStorage.setItem('currentUser', JSON.stringify(this.newUser));
+      // localStorage.setItem("loggedIn", JSON.stringify(true));
+      // console.log("newUser");
+      // this.makeCheckoutItem();
     } else {
       localStorage.setItem('currentUser', JSON.stringify(this.loggedUser));
       localStorage.setItem("loggedIn", JSON.stringify(true));
