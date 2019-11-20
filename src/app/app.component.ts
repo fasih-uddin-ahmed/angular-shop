@@ -28,18 +28,21 @@ export class AppComponent implements OnInit {
   onLogOut() {
     this.cartItems = this.cartService.getCartItems();
     console.log("onlogoutclicked");
-    this.user.cart = {
-      items: this.cartItems,
-      totalAmount: this.cartTotalAmount,
-      totalQuantity: this.cartTotalQuantity
+    if (this.cartItems) {
+      this.user.cart = {
+        items: this.cartItems,
+        totalAmount: this.cartTotalAmount,
+        totalQuantity: this.cartTotalQuantity
+      }
+      console.log(this.user);
+      this.userService.updateUser(this.user);
     }
+
     // this.user.cart = {
     //   items: [],
     //   totalAmount: 0,
     //   totalQuantity: 0
     // }
-    console.log(this.user);
-    this.userService.updateUser(this.user);
     this.cartService.setCartItems([]);
     this.cartService.setTotalAmount(0);
     this.cartService.setTotalQuantity(0);

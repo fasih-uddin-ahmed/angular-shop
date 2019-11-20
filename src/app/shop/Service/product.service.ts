@@ -61,6 +61,7 @@ export class ProductService {
   }
 
   getProductDetails() {
-    return this.products = this.http.get("/assets/product-list-detail.json");
+    // return this.products = this.http.get("/assets/product-list-detail.json");
+    return this.http.get("http://www.mocky.io/v2/5dd426b22f0000f905d4f997/api/products/");
   }
 }

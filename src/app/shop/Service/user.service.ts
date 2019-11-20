@@ -16,30 +16,53 @@ export class UserService {
 
   constructor(
     private http: HttpClient
-  ) { }
-
+  ) {
+    let currentValue = JSON.parse(localStorage.getItem('users'));
+    if (currentValue === null) {
+      localStorage.setItem('users', JSON.stringify(new Array()));
+    }
+  }
   addUser(user) {
     // console.log(user);
     // this.http.post(`${this.uri}/`, user)
     //   .subscribe(res => console.log('user added to db'));
 
-    let result = JSON.parse(localStorage.getItem('user'));
-    if (result === null) {
-      localStorage.setItem('user', JSON.stringify([]));
+    let currentValue = JSON.parse(localStorage.getItem('users'));
+    // if (currentValue === null) {
+    if (currentValue.length === 0) {
+      localStorage.setItem('users', JSON.stringify([user]));
+      this.userSource.next(user);
+    } else {
+      const updatedValue = [...currentValue, user];
+      localStorage.setItem('users', JSON.stringify(updatedValue));
+      this.userSource.next(updatedValue);
     }
-    let currentValue = JSON.parse(localStorage.getItem('user'));
-    const updatedValue = [...currentValue, user];
-    localStorage.setItem('user', JSON.stringify(updatedValue));
-    this.userSource.next(updatedValue);
+
+    // let result = JSON.parse(localStorage.getItem('users'));
+    // if (result === null) {
+    //   localStorage.setItem('users', JSON.stringify([]));
+    // }
+    // let currentValue = JSON.parse(localStorage.getItem('users'));
+    // if (currentValue.length === 0) {
+    //   localStorage.setItem('users', JSON.stringify([user]));
+    //   this.userSource.next(user);
+    // } else {
+    //   const updatedValue = [...currentValue, user];
+    //   localStorage.setItem('users', JSON.stringify(updatedValue));
+    //   this.userSource.next(updatedValue);
+    // }
   }
 
   getUser(email) {
     // console.log(email);
     // return this.http.get(`${this.uri}/user`, email);
 
-    let users = JSON.parse(localStorage.getItem('user'));
+    let users = JSON.parse(localStorage.getItem('users'));
     if (users === null) {
-      localStorage.setItem('user', JSON.stringify([]));
+      localStorage.setItem('users', JSON.stringify([]));
+    }
+    if (users.length === 0) {
+      return null;
     }
     if (users.length > 0) {
       let foundUser = users.find(user => user.email === email);
@@ -63,7 +86,7 @@ export class UserService {
   }
 
   updateUser(user) {
-    let users = JSON.parse(localStorage.getItem('user'));
+    let users = JSON.parse(localStorage.getItem('users'));
     let index;
     let i = 0;
     users.forEach(u => {
@@ -74,7 +97,7 @@ export class UserService {
       i++;
     });
     users[index] = user;
-    localStorage.setItem("user", JSON.stringify(users));
+    localStorage.setItem("users", JSON.stringify(users));
     localStorage.setItem("currentUser", JSON.stringify(user));
   }
 }
