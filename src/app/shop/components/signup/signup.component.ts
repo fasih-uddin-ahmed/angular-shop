@@ -23,7 +23,12 @@ export class SignupComponent implements OnInit {
   ) { }
 
   onSignup() {
-    let user = this.userService.getUser(this.userToSignup.email);
+    let user;
+    // user = this.userService.getUser(this.userToSignup.email);
+    this.userService.getUser(this.userToSignup.email).subscribe(res => {
+      user = res;
+      console.log(user);
+    });
     console.log(user);
     if (user) {
       this.toastr.error("User with this email alredy exists.");

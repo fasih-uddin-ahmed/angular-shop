@@ -1,20 +1,26 @@
-const { Product } = require('../models/product');
 const mongoose = require('mongoose');
 const express = require('express');
+const { Product } = require('../models/product');
 const router = express.Router();
 
 
 router.get('/', async (req, res) => {
-    console.log(req.body);
     let products = await Product.find();
-    // let product = await Product.findOne({ email: req.body.email });
     if (!products) return res.status(400).send('No products in Database.');
 
     res.send(products);
 });
 
+router.post('/product', async (req, res) => {
+    console.log(req.body);
+    let product = await Product.findOne({ id: req.body.id });
+    if (!product) return res.status(400).send('No product in Database.');
+
+    res.send(product);
+});
+
 router.post('/', async (req, res) => {
-    let product = await Product.findById(req.body.id);
+    let product = await Product.findOne({ id: req.body.id });
     if (product) return res.status(400).send('product already registered.');
 
     product = new Product({
