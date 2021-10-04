@@ -1,1 +1,1 @@
-A shop management application using Angular Framework and designing in bootstrap, performing CRUD operations.
+A shopping website using Angular Framework and designing in bootstrap, performing CRUD operations.
